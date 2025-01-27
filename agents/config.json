@@ -1,0 +1,72 @@
+{
+  "agents": {
+    "orchestrator": {
+      "type": "supervisor",
+      "description": "Delegates tasks to other agents"
+    },
+    "sorting": {
+      "type": "processor",
+      "description": "Gathers and categorizes input files"
+    },
+    "indexing": {
+      "type": "processor",
+      "description": "Indexes files into RAG database"
+    },
+    "compiler": {
+      "type": "analyzer",
+      "description": "Compiles logs chronologically"
+    },
+    "investigator": {
+      "type": "analyzer",
+      "description": "Identifies anomalies and patterns"
+    },
+    "analyst": {
+      "type": "analyzer",
+      "description": "Performs root cause analysis"
+    },
+    "writer": {
+      "type": "generator",
+      "description": "Generates readable analysis reports"
+    },
+    "redaction": {
+      "type": "processor",
+      "description": "Removes sensitive information"
+    },
+    "researcher": {
+      "type": "analyzer",
+      "description": "Investigates remediation options"
+    },
+    "consultant": {
+      "type": "interactive",
+      "description": "Handles user feedback and questions"
+    },
+    "presenter": {
+      "type": "generator",
+      "description": "Prepares data for frontend display"
+    },
+    "archiver": {
+      "type": "processor",
+      "description": "Archives analysis to permanent storage"
+    }
+  },
+  "workflows": {
+    "case_processing": [
+      "sorting",
+      "indexing",
+      "compiler",
+      "investigator",
+      "analyst",
+      "writer",
+      "redaction",
+      "researcher",
+      "presenter",
+      "archiver"
+    ],
+    "user_interaction": [
+      "consultant",
+      "researcher",
+      "writer",
+      "presenter"
+    ]
+  }
+}

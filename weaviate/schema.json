@@ -1,0 +1,107 @@
+{
+  "classes": [
+    {
+      "class": "ClusterCase",
+      "description": "A Windows Failover Cluster investigation case",
+      "properties": [
+        {
+          "name": "caseId",
+          "dataType": ["string"],
+          "description": "Unique identifier for the case"
+        },
+        {
+          "name": "title",
+          "dataType": ["string"],
+          "description": "Title of the case"
+        },
+        {
+          "name": "synopsis",
+          "dataType": ["text"],
+          "description": "User provided synopsis of the incident"
+        },
+        {
+          "name": "status",
+          "dataType": ["string"],
+          "description": "Current status of the case"
+        },
+        {
+          "name": "created",
+          "dataType": ["date"],
+          "description": "Case creation timestamp"
+        }
+      ]
+    },
+    {
+      "class": "ClusterEvent",
+      "description": "Events from cluster logs",
+      "properties": [
+        {
+          "name": "caseId",
+          "dataType": ["string"],
+          "description": "Reference to parent case"
+        },
+        {
+          "name": "timestamp",
+          "dataType": ["date"],
+          "description": "Event timestamp"
+        },
+        {
+          "name": "node",
+          "dataType": ["string"],
+          "description": "Node where event occurred"
+        },
+        {
+          "name": "level",
+          "dataType": ["string"],
+          "description": "Event level (ERR, WARN, INFO, DBG)"
+        },
+        {
+          "name": "eventType",
+          "dataType": ["string"],
+          "description": "Type of event (SQL AG, CSV Backup, etc.)"
+        },
+        {
+          "name": "component",
+          "dataType": ["string"],
+          "description": "Cluster component that generated the event"
+        },
+        {
+          "name": "description",
+          "dataType": ["text"],
+          "description": "Full event description"
+        }
+      ]
+    },
+    {
+      "class": "KnowledgeBase",
+      "description": "Permanent knowledge base entries",
+      "properties": [
+        {
+          "name": "title",
+          "dataType": ["string"],
+          "description": "Title of the knowledge base entry"
+        },
+        {
+          "name": "content",
+          "dataType": ["text"],
+          "description": "Knowledge base content"
+        },
+        {
+          "name": "category",
+          "dataType": ["string"],
+          "description": "Category of the knowledge"
+        },
+        {
+          "name": "source",
+          "dataType": ["string"],
+          "description": "Source of the knowledge (Case ID, Import, etc.)"
+        },
+        {
+          "name": "created",
+          "dataType": ["date"],
+          "description": "Entry creation timestamp"
+        }
+      ]
+    }
+  ]
+}
